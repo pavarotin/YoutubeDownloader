@@ -17,30 +17,19 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid Margin="6,3.349,-4,0">
-        <TextBox x:Name="url_Box"   Style="{StaticResource MaterialDesignOutlinedTextBox }" materialDesign:HintAssist.Hint="paste your URL" HorizontalAlignment="Left" Height="52.325" Margin="48.605,68.023,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="688.604" mah:TextBoxHelper.WatermarkWrapping="Wrap" mah:TextBoxHelper.IsWaitingForData="True" FontWeight="Bold" Text="https://youtube.com/HssGjjkds" Foreground="#DDA40D0D" TextChanged="TextBox_TextChanged">
-            <TextBox.Background>
-                <SolidColorBrush Color="#FF2196F3" Opacity="0.63"/>
-            </TextBox.Background>
-        </TextBox>
+        <TextBox x:Name="url_Box"   Style="{StaticResource MaterialDesignOutlinedTextBox }" materialDesign:HintAssist.Hint="paste your URL" HorizontalAlignment="Left" Height="62.325" Margin="22.605,33.023,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="714.604" mah:TextBoxHelper.WatermarkWrapping="Wrap" mah:TextBoxHelper.IsWaitingForData="True" FontWeight="Bold" Text="https://youtube.com/HssGjjkds" Foreground="#FF2196F3" TextChanged="TextBox_TextChanged" FontSize="20" Background="{x:Null}"/>
         <Button  Style="{StaticResource MaterialDesignRaisedButton}"
-    materialDesign:ButtonAssist.CornerRadius="10" Content="Download" HorizontalAlignment="Left" Height="41.861" Margin="246.395,348.488,0,0" VerticalAlignment="Top" Width="317.093"/>
-        <Image HorizontalAlignment="Left" Height="177.907" Margin="39.838,131.858,0,0" VerticalAlignment="Top" Width="275.232" OpacityMask="#FFFF7A7A" Source="fnYZaHDN22U.jpg"/>
-        <Label x:Name="title" Content="Уроки повара" HorizontalAlignment="Left" Height="64.884" Margin="329.07,131.858,0,0" VerticalAlignment="Top" Width="408.139" FontWeight="Bold"/>
+    materialDesign:ButtonAssist.CornerRadius="10" Content="Download" HorizontalAlignment="Left" Height="41.861" Margin="248.395,324.988,0,0" VerticalAlignment="Top" Width="317.093" Click="Button_Click"/>
+        <Image x:Name="poster" HorizontalAlignment="Left" Height="177.907" Margin="10,131.858,0,0" VerticalAlignment="Top" Width="275.232" OpacityMask="#FFFF7A7A" Source="fnYZaHDN22U.jpg"/>
+        <Label x:Name="title" Content="Название" HorizontalAlignment="Left" Height="64.884" Margin="329.07,131.858,0,0" VerticalAlignment="Top" Width="408.139" FontWeight="Bold"/>
         <Label x:Name="duration" Content="4:30" HorizontalAlignment="Left" Height="32" Margin="329.07,196.742,0,0" VerticalAlignment="Top" Width="69" FontWeight="Bold"/>
-        <Label x:Name="size" Content="470mb" HorizontalAlignment="Left" Height="32" Margin="398.07,196.742,0,0" VerticalAlignment="Top" Width="102" FontWeight="Bold"/>
-        <ToggleButton x:Name="sound"
-  Style="{StaticResource MaterialDesignSwitchToggleButton}" Background="{x:Null}" Margin="358.032,239.075,293.263,129.509">
-            <materialDesign:ToggleButtonAssist.SwitchTrackOnBackground>
-                <SolidColorBrush
-      Color="Green" />
-            </materialDesign:ToggleButtonAssist.SwitchTrackOnBackground>
-            <materialDesign:ToggleButtonAssist.SwitchTrackOffBackground>
-                <SolidColorBrush
-      Color="Red" />
-            </materialDesign:ToggleButtonAssist.SwitchTrackOffBackground>
-        </ToggleButton>
-        <ComboBox x:Name="qual"
-  materialDesign:HintAssist.Hint="Quality" Margin="329.07,245.742,391.93,145.308">
+        <Label x:Name="size" Content="0mb" HorizontalAlignment="Left" Height="32" Margin="522.775,201.742,0,0" VerticalAlignment="Top" Width="102" FontWeight="Bold"/>
+        <ToggleButton
+  Style="{StaticResource MaterialDesignSwitchToggleButton}"
+  
+  IsChecked="False" Background="#FF2196F3" Margin="462.775,245.742,165.225,111.258" />
+        <ComboBox x:Name="qual1"
+  materialDesign:HintAssist.Hint="Quality" Margin="329.07,245.742,391.93,145.308" SelectedIndex="0" SelectionChanged="qual1_SelectionChanged">
             <ComboBoxItem>
                 144p
             </ComboBoxItem>
@@ -60,8 +49,10 @@
                 1080p
             </ComboBoxItem>
         </ComboBox>
-        <ProgressBar
-  IsIndeterminate="False" Margin="-2,411.651,2,0" />
+        <ProgressBar x:Name="progressBar"
+  IsIndeterminate="False" Margin="0,395.349,10,0" Height="Auto" />
+        <Label x:Name="downLoadSize" Content="0 МБ" HorizontalAlignment="Left" Height="27.5" Margin="364.532,395.349,0,-7.198" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="downLoadSpeed" Content="100 КБ/С" HorizontalAlignment="Left" Height="27.5" Margin="358.032,371.849,0,0" VerticalAlignment="Top" Width="123" FontWeight="Bold"/>
     </Grid>
 
 </mah:MetroWindow>
