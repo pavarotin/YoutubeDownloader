@@ -56,6 +56,10 @@ namespace YoutubeDownloader
         private async Task GetInfo()
         {
 
+            if (sizes.Count > 0) {
+                sizes.Clear();
+            } 
+
             var video = await youtube.Videos.GetAsync(url);
 
             title.Content = video.Title; // "Collections - Blender 2.80 Fundamentals"

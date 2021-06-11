@@ -8,7 +8,7 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     x:Class="YoutubeDownloader.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="578" Width="1027"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -16,20 +16,24 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}">
-    <Grid Margin="6,3.349,-4,0">
-        <TextBox x:Name="url_Box"   Style="{StaticResource MaterialDesignOutlinedTextBox }" materialDesign:HintAssist.Hint="paste your URL" HorizontalAlignment="Left" Height="62.325" Margin="22.605,33.023,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="714.604" mah:TextBoxHelper.WatermarkWrapping="Wrap" mah:TextBoxHelper.IsWaitingForData="True" FontWeight="Bold" Text="https://youtube.com/HssGjjkds" Foreground="#FF2196F3" TextChanged="TextBox_TextChanged" FontSize="20" Background="{x:Null}"/>
+    <Grid Margin="6,3.349,12,27">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="283*"/>
+            <RowDefinition Height="133*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="url_Box"   Style="{StaticResource MaterialDesignOutlinedTextBox }" materialDesign:HintAssist.Hint="paste your URL" Height="62.325" Margin="22.605,0,52.791,150.905" TextWrapping="Wrap" VerticalAlignment="Bottom" mah:TextBoxHelper.WatermarkWrapping="Wrap" mah:TextBoxHelper.IsWaitingForData="True" FontWeight="Bold" Text="https://youtube.com/HssGjjkds" Foreground="#FF2196F3" TextChanged="TextBox_TextChanged" FontSize="20" Background="{x:Null}"/>
         <Button  Style="{StaticResource MaterialDesignRaisedButton}"
-    materialDesign:ButtonAssist.CornerRadius="10" Content="Download" HorizontalAlignment="Left" Height="41.861" Margin="248.395,324.988,0,0" VerticalAlignment="Top" Width="317.093" Click="Button_Click"/>
-        <Image x:Name="poster" HorizontalAlignment="Left" Height="177.907" Margin="10,131.858,0,0" VerticalAlignment="Top" Width="275.232" OpacityMask="#FFFF7A7A" Source="fnYZaHDN22U.jpg"/>
-        <Label x:Name="title" Content="Название" HorizontalAlignment="Left" Height="64.884" Margin="329.07,131.858,0,0" VerticalAlignment="Top" Width="408.139" FontWeight="Bold"/>
-        <Label x:Name="duration" Content="4:30" HorizontalAlignment="Left" Height="32" Margin="329.07,196.742,0,0" VerticalAlignment="Top" Width="69" FontWeight="Bold"/>
-        <Label x:Name="size" Content="0mb" HorizontalAlignment="Left" Height="32" Margin="522.775,201.742,0,0" VerticalAlignment="Top" Width="102" FontWeight="Bold"/>
+    materialDesign:ButtonAssist.CornerRadius="10" Content="Download" Height="41.861" Margin="248.395,0,224.512,48.802" Click="Button_Click" VerticalAlignment="Bottom" Grid.Row="1"/>
+        <Image x:Name="poster" HorizontalAlignment="Left" Margin="22.605,0,0,123.309" Width="253.232" OpacityMask="#FFFF7A7A" Source="fnYZaHDN22U.jpg" Grid.RowSpan="2" Height="177.907" VerticalAlignment="Bottom"/>
+        <Label x:Name="title" Content="Название" Margin="280.837,215.435,0,0" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Width="667.372" Height="45.616"/>
+        <Label x:Name="duration" Content="4:30" Height="32" Margin="280.837,0,0,53.421" VerticalAlignment="Bottom" FontWeight="Bold" HorizontalAlignment="Left" Width="38.2"/>
+        <Label x:Name="size" Content="0mb" Margin="0,0,496.725,53.421" FontWeight="Bold" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="102"/>
         <ToggleButton
   Style="{StaticResource MaterialDesignSwitchToggleButton}"
   
-  IsChecked="False" Background="#FF2196F3" Margin="462.775,245.742,165.225,111.258" />
+  IsChecked="False" Background="#FF2196F3" Margin="0,0,496.725,154.949" Grid.RowSpan="2" Height="58.651" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="162" />
         <ComboBox x:Name="qual1"
-  materialDesign:HintAssist.Hint="Quality" Margin="329.07,245.742,391.93,145.308" SelectedIndex="0" SelectionChanged="qual1_SelectionChanged">
+  materialDesign:HintAssist.Hint="Quality" Margin="0,0,627.163,0" SelectedIndex="0" SelectionChanged="qual1_SelectionChanged" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="93" Height="34.6">
             <ComboBoxItem>
                 144p
             </ComboBoxItem>
@@ -50,9 +54,11 @@
             </ComboBoxItem>
         </ComboBox>
         <ProgressBar x:Name="progressBar"
-  IsIndeterminate="False" Margin="0,395.349,10,0" Height="Auto" />
-        <Label x:Name="downLoadSize" Content="0 МБ" HorizontalAlignment="Left" Height="27.5" Margin="364.532,395.349,0,-7.198" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label x:Name="downLoadSpeed" Content="100 КБ/С" HorizontalAlignment="Left" Height="27.5" Margin="358.032,371.849,0,0" VerticalAlignment="Top" Width="123" FontWeight="Bold"/>
+  IsIndeterminate="False" Margin="0,0,0,-20.302" Height="20.302" VerticalAlignment="Bottom" Grid.Row="1" />
+        <Label x:Name="downLoadSize" Content="0 МБ" Margin="475.575,0,485.575,-27.5" FontWeight="Bold" Height="27.5" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1"/>
+        <Label x:Name="downLoadSpeed" Content="100 КБ/С" Height="27.5" Margin="0" VerticalAlignment="Bottom" FontWeight="Bold" HorizontalAlignment="Center" Grid.Row="1"/>
+        <Label Content="Youtube DOWNLOADER by Pahen" Height="64.533" Margin="0,19.662,30.917,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Teko SemiBold" FontSize="48" Background="{x:Null}" Foreground="#DDFF0000" HorizontalAlignment="Right" Width="553.874"/>
+        <Image Margin="0,10,865,0" Source="qr-code.png" Height="114.645" VerticalAlignment="Top"/>
     </Grid>
 
 </mah:MetroWindow>
